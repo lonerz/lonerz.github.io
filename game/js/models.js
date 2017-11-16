@@ -1,6 +1,7 @@
 ///// MODELS /////
 
 var DEFAULT_COLORS = ["#666666", "#FF6347", "#2ADCCB", "#9ACD32", "#FFA500", "#6A5ACD"];
+var circleR = 5, borderR = 3;
 
 function Vertex(index, x, y) {
     // init
@@ -69,7 +70,7 @@ function Graph() {
 
     this.drawPoints = function (ctx) {
         for (var i = 0; i < this.V; ++i) {
-            circle(ctx, this.vertices[i].x, this.vertices[i].y, 30, DEFAULT_COLORS[0], 10);
+            circle(ctx, this.vertices[i].x, this.vertices[i].y, circleR, DEFAULT_COLORS[0], borderR);
         }
     };
 

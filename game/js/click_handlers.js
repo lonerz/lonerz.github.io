@@ -56,7 +56,7 @@ function onMouseDown(e) {
     var x = e.pageX - canvas.offsetLeft;
     var y = e.pageY - canvas.offsetTop;
     
-    console.log(x,y);
+    console.log("[",x,",",y,"]");
     
     for (var i = 1; i <= currentLevel.colors; ++i) {
         if (inCircle(x, y, 700 - 50*(currentLevel.colors - i + 1), 720, 20) && currentLevel.activeColor !== i) {
@@ -74,9 +74,9 @@ function onMouseDown(e) {
     
     for (var i = 0; i < currentLevel.graph.V; ++i) {
         var vertex = currentLevel.graph.vertices[i];
-        if (inCircle(x, y, vertex.x, vertex.y, 30)) {
+        if (inCircle(x, y, vertex.x, vertex.y, circleR+5)) {
             if (vertex.color !== currentLevel.activeColor && updateColor(vertex, currentLevel.activeColor)) {
-                circle(ctx, vertex.x, vertex.y, 30, DEFAULT_COLORS[currentLevel.activeColor], 10);
+                circle(ctx, vertex.x, vertex.y, circleR, DEFAULT_COLORS[currentLevel.activeColor], borderR);
             }
             return;
         }

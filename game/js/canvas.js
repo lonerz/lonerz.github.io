@@ -13,7 +13,7 @@ function circle(ctx, cx, cy, r, fillStyle, lineWidth, strokeStyle) {
 }
 
 function drawEdge(ctx, x1, y1, x2, y2) {
-    ctx.lineWidth = 15;
+    ctx.lineWidth = 5;
     ctx.strokeStyle = "#D0D0D0";
     ctx.beginPath();
     ctx.moveTo(x1, y1);
